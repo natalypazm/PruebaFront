@@ -1,10 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Dashboard from '@/components/Dashboard'
-import Profile from '@/components/Profile'
-import Tables from '@/components/Tables'
-import Maps from '@/components/Maps'
-import BadGateway from '@/components/BadGateway'
+import Indicadores from '@/components/Indicadores'
+import Ventas from '@/components/Ventas'
+import Compras from '@/components/Compras'
+import Inventarios from '@/components/Inventarios'
+import Finanzas from '@/components/Finanzas'
+import Personas from '@/components/Personas'
+import Planificacion from '@/components/Planificacion'
+import Informes from '@/components/Informes'
 
 
 Vue.use(Router);
@@ -13,40 +16,53 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/dashboard',
-      name: 'Dashboard',
-      component: Dashboard,
+      path: '/indicadores',
+      name: 'Indicadores',
+      component: Indicadores,
       props: { page: 1 },
       alias: '/'
     },
     {
-      path: '/profile',
-      name: 'Profile',
-      props: { page: 2 },
-      component: Profile
-    },
-    {
-      path: '/tables',
-      name: 'Tables',
+      path: '/ventas',
+      name: 'Ventas',
       props: { page: 3 },
-      component: Tables
+      component: Ventas
     },
     {
-      path: '/maps',
-      name: 'Maps',
+      path: '/compras',
+      name: 'Compras',
+      props: { page: 3 },
+      component: Compras
+    },
+    {
+      path: '/inventarios',
+      name: 'Inventarios',
       props: { page: 4 },
-      component: Maps
+      component: Inventarios
     },
     {
-      path: '/404',
-      name: 'BadGateway',
+      path: '/finanzas',
+      name: 'Finanzas',
       props: { page: 5 },
-      component: BadGateway
+      component: Finanzas
     },
     {
-      path: '*',
-      props: { page: 5 },
-      redirect: '/404'
+      path: '/personas',
+      name: 'Personas',
+      props: { page: 6 },
+      component: Personas
+    },
+    {
+      path: '/planificacion',
+      name: 'Planificacion',
+      props: { page: 7 },
+      component: Planificacion
+    },
+    {
+      path: '/informes',
+      name: 'Informes',
+      props: { page: 8 },
+      component: Informes
     }
   ]
 })
