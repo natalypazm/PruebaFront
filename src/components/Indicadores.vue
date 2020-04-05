@@ -2,124 +2,78 @@
   <section id="dashboard">
     <h4 class="text-center mb-3">INDICADORES</h4>
     <mdb-card class="mb-4">
-      <mdb-card-body class="d-sm-flex justify-content-between">
-                <mdb-card cascade class="cascading-admin-card">
-            <div class="admin-up">
-              <mdb-icon icon="money-bill-alt" far class="primary-color"/>
-              <div class="data">
-                <p>SALES</p>
-                <h4>
-                  <strong>$2000</strong>
-                </h4>
-              </div>
-            </div>
+      <mdb-card-body>
+      <div class="d-flex justify-content-center">
+        <div class="custom-control custom-switch mr-3">
+    <input type="checkbox" class="custom-control-input" id="customSwitches">
+    <label class="custom-control-label" for="customSwitches">ocultar cuadro</label>
+  </div>
+          <div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" id="customSwitches">
+    <label class="custom-control-label" for="customSwitches">ocultar lista</label>
+  </div>
+      </div>
+          <mdb-card class="card-progress">
             <mdb-card-body>
-              <div class="progress">
-                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="progress-bar bg-primary" role="progressbar"
-                  style="width: 25%"></div>
+            <div class="box-progress">
+              <div class="first-text">
+              <strong class="mr-3">Comprobantes</strong>
+              <small>600</small>
               </div>
-              <mdb-card-text>Better than last week (25%)</mdb-card-text>
+              <div class="progress progress-size">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="progress-bar bg-info" role="progressbar"
+                  style="width: 65%"></div>
+              </div>
+              <mdb-card-text class="progress-cantidad">S/ 2,301.00</mdb-card-text>
+            </div>
+            <div class="box-progress">
+              <div class="first-text">
+              <strong class="mr-3">Percepciones</strong>
+              <small>24</small>
+              </div>
+              <div class="progress progress-size">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="progress-bar bg-warning" role="progressbar"
+                  style="width: 35%"></div>
+              </div>
+              <mdb-card-text class="progress-cantidad">S/ 570.00</mdb-card-text>
+            </div>
+              <div class="box-progress">
+              <div class="first-text">
+              <strong class="mr-3">Total</strong>
+              <small>600</small>
+              </div>
+              <div class="progress progress-size">
+                <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="25" class="progress-bar bg-success" role="progressbar"
+                  style="width: 100%"></div>
+              </div>
+              <mdb-card-text class="progress-cantidad">S/ 2,301.00</mdb-card-text>
+            </div>
             </mdb-card-body>
           </mdb-card>
-        <form class="d-flex md-form justify-content-center" style="margin:0;">
-          <input aria-label="Search" class="form-control" placeholder="Type your query" type="search" />
-          <mdb-btn color="primary" size="sm" class="my-0" type="submit"><i class="fa fa-search"></i></mdb-btn>
-        </form>
-        
+          <!--<form id="demo-2">
+            <input type="search" placeholder="Search">
+          </form>!-->
+            <mdb-form-inline class="md-form">
+                <mdbIcon icon="search" />
+                <mdb-input type="search" placeholder="Search" aria-label="Search"/>
+            </mdb-form-inline>
+            <mdb class="justify-content-center d-flex"><Proveedores></Proveedores></mdb>
       </mdb-card-body>
     </mdb-card>
-    <section>
-      <mdb-row>
-          <mdb-col md="6" class="mb-4">
-              <mdb-card>
-                  <mdb-card-body>
-                      <mdb-tbl hover>
-                          <thead class="blue-grey lighten-4">
-                              <tr>
-                                  <th>#</th>
-                                  <th>Lorem</th>
-                                  <th>Ipsum</th>
-                                  <th>Dolor</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <th scope="row">1</th>
-                                  <td>Cell 1</td>
-                                  <td>Cell 2</td>
-                                  <td>Cell 3</td>
-                              </tr>
-                              <tr>
-                                  <th scope="row">2</th>
-                                  <td>Cell 4</td>
-                                  <td>Cell 5</td>
-                                  <td>Cell 6</td>
-                              </tr>
-                              <tr>
-                                  <th scope="row">3</th>
-                                  <td>Cell 7</td>
-                                  <td>Cell 8</td>
-                                  <td>Cell 9</td>
-                              </tr>
-                          </tbody>
-                      </mdb-tbl>
-                  </mdb-card-body>
-              </mdb-card>
-          </mdb-col>
-          <mdb-col md="6" class="mb-4">
-              <mdb-card>
-                  <mdb-card-body>
-                      <mdb-tbl hover>
-                          <thead class="blue lighten-4">
-                              <tr>
-                                  <th>#</th>
-                                  <th>Lorem</th>
-                                  <th>Ipsum</th>
-                                  <th>Dolor</th>
-                              </tr>
-                          </thead>
-                          <tbody>
-                              <tr>
-                                  <th scope="row">1</th>
-                                  <td>Cell 1</td>
-                                  <td>Cell 2</td>
-                                  <td>Cell 3</td>
-                              </tr>
-                              <tr>
-                                  <th scope="row">2</th>
-                                  <td>Cell 4</td>
-                                  <td>Cell 5</td>
-                                  <td>Cell 6</td>
-                              </tr>
-                              <tr>
-                                  <th scope="row">3</th>
-                                  <td>Cell 7</td>
-                                  <td>Cell 8</td>
-                                  <td>Cell 9</td>
-                              </tr>
-                          </tbody>
-                      </mdb-tbl>
-                  </mdb-card-body>
-              </mdb-card>
-          </mdb-col>
-      </mdb-row>
-    </section>
   </section>
 </template>
-
 <script>
-import { mdbRow, mdbCol, mdbCard, mdbCardBody, mdbTbl, mdbCardText, mdbIcon,} from 'mdbvue'
+import {mdbCard, mdbCardBody, mdbCardText, mdbIcon, } from 'mdbvue';
+import Proveedores from '@/components/Proveedores';
 
 export default {
   name: 'Indicadores',
   components: {
-    mdbRow,
-    mdbCol,
     mdbCard,
     mdbCardBody,
-    mdbTbl,
     mdbCardText,
     mdbIcon,
+    Proveedores,
   },
   data () {
     return {
@@ -137,6 +91,7 @@ export default {
       showFluidModalLeft: false,
       showFluidModalTop: false,
       showFluidModalBottom: false,
+      switchValue: false,
       barChartData: {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
         datasets: [
@@ -316,5 +271,31 @@ export default {
 }
 .classic-admin-card .card-body h4 {
   margin-top: 10px;
+}
+.card-progress{
+    width: 65%;
+    margin: 20px auto;
+    padding-left: 60px !important;
+}
+.box-progress{
+  height:30px;
+}
+.first-text{
+    right: 60px;
+    position: relative;
+    top: 15px;
+}
+.progress-size{
+    width: 60%;
+    left: 110px;
+    position: relative;
+    border-radius: 10px;
+    height: 13px;
+}
+.progress-cantidad{
+    position: relative;
+    top: -20px;
+    right: -470px;
+    width:max-content;
 }
 </style>

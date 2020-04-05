@@ -1,5 +1,5 @@
 <template>
-  <div class="flexible-content">
+  <div v-bind:class="{'flexible-content':showMenu,'flexible-content-collapsed':!showMenu,}">
     <!--Navbar-->
     <mdb-navbar class="flexible-navbar white" light position="top" scrolling>
       <mdb-navbar-brand class="logo-wrapper" href="https://mdbootstrap.com/docs/vue/" target="_blank"
@@ -45,9 +45,9 @@
     </mdb-navbar>
     <!--/.Navbar-->
     <!-- Sidebar -->
-    <div class="sidebar-fixed position-fixed pt-5">
+    <div class="sidebar-fixed position-fixed pt-5" v-bind:class="{hiddenMenu: !showMenu, showMenu: showMenu}">
       <mdb-list-group class="list-group-flush mt-5">
-      <a class="ml-auto"><mdb-icon icon="chevron-circle-left fa-lg" class="mr-3 mb-4 icon-display-menu"/></a>
+      <a class="ml-auto" v-on:click="toggleMenu()"><mdb-icon icon="chevron-circle-left fa-lg" class="mr-3 mb-4 icon-display-menu"/></a>
         <router-link to="/" @click.native="activeItem = 1">
           <mdb-list-group-item
             :action="true"
@@ -124,7 +124,7 @@
     </div>
     <!-- /Sidebar  -->
     <main>
-      <div class="mt-5 p-5">
+      <div class="mt-5 px-3">
         <router-view></router-view>
       </div>
     </main>
@@ -166,8 +166,15 @@ export default {
   },
   data() {
     return {
-      activeItem: 1
+      activeItem: 1,
+      showMenu: true,
     };
+  },
+  methods:{
+    toggleMenu: function(){
+      this.showMenu = !this.showMenu;
+    }
+
   },
   beforeMount() {
     this.activeItem = this.$route.matched[0].props.default.page;
@@ -188,13 +195,16 @@ export default {
 <style scoped>
 main {
   background-color: #ededee;
+  height:90vh;
 }
-
 .flexible-content {
-  transition: padding-left 0.3s;
+  transition:0.7s;
   padding-left: 270px;
 }
-
+.flexible-content-collapsed{
+   transition:0.7s;
+  padding-left: 100px; 
+}
 .flexible-navbar {
   transition: padding-left 0.5s;
   //padding-left: 270px;
@@ -253,6 +263,14 @@ main {
     background: #ededee;
     border-radius: 100%;
     padding: 6px !important;
+}
+.hiddenMenu{
+  left:-173px;
+  transition:0.7s;
+}
+.showMenu{
+  left:0px;
+  transition:0.7s;
 }
 
 
